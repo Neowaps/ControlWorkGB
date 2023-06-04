@@ -1,33 +1,46 @@
 ﻿System.Console.Write("Введите количество строк: ");
 int countArr = Convert.ToInt32(Console.ReadLine());
 int limit = 3;
-string[] array = new string[countArr];
-void FillArray()
+
+void FillArray(string[] arrayFill)
 {
-    for (int i = 0; i < countArr; i++)
+    for (int i = 0; i < arrayFill.Length; i++)
     {
         System.Console.Write($"Введите {i + 1}'ю строку: ");
-        array[i] = Console.ReadLine();
+        arrayFill[i] = Console.ReadLine();
     }
 }
 
-void FormArray(string[] arrayForm)
+string[] FormArray(string[] arrayIncome)
 {
-    for (int i = 0; i < countArr; i++)
+    string[] arrayForm = new string[arrayIncome.Length];
+    int count = 0;
+    for (int i = 0; i < arrayIncome.Length; i++)
     {
-        if (array.Length <= limit)
+        if (arrayIncome[i].Length <= limit)
         {
-            int count = 0;
-            arrayForm[count] = array[i];
+            arrayForm[count] = arrayIncome[i];
             count++;
         }
     }
+    return arrayForm;
 }
 
 void PrintArray(string[] arrayPrint)
 {
     for (int i = 0; i < arrayPrint.Length; i++)
     {
-        System.Console.WriteLine(arrayPrint[i] + " ");
+        System.Console.Write(arrayPrint[i] + " ");
     }
 }
+
+string[] array = new string[countArr];
+FillArray(array);
+System.Console.Write("Вы ввели массив:");
+PrintArray(array);
+System.Console.WriteLine();
+string[] newArray = new string[countArr];
+newArray = FormArray(array);
+System.Console.Write("Сформированный массив: ");
+PrintArray(newArray);
+
