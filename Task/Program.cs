@@ -43,4 +43,3 @@ string[] newArray = new string[countArr];
 newArray = FormArray(array);
 System.Console.Write("Сформированный массив: ");
 PrintArray(newArray);
-
