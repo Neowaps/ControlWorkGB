@@ -23,3 +23,11 @@ void FormArray(string[] arrayForm)
         }
     }
 }
+
+void PrintArray(string[] arrayPrint)
+{
+    for (int i = 0; i < arrayPrint.Length; i++)
+    {
+        System.Console.WriteLine(arrayPrint[i] + " ");
+    }
+}
